@@ -1,9 +1,9 @@
 package com.dmppka.streams.domain;
 
 public class Person {
-    String name;
-    int age;
-    Gender gender;
+    private String name;
+    private int age;
+    private Gender gender;
 
     public Person(String name, int age, Gender gender) {
         this.name = name;
