@@ -29,6 +29,19 @@ public class Example3 {
 
         System.out.println(totalAge);
 
+        // One more way
+        totalAge = people.stream()
+                .mapToInt(Person::getAge)
+                .sum();
+
+        System.out.println(totalAge);
+
+        // And another one way
+        totalAge = people.stream()
+                .reduce(0, (age, person) -> age + person.getAge(), Math::addExact);
+
+        System.out.println(totalAge);
+
         // Result of numbers' multiplication
         List<Integer> numbers = asList(1, 2, 3, 4, 5);
         int result = numbers.stream()
