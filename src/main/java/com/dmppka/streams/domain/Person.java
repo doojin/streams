@@ -1,9 +1,9 @@
 package com.dmppka.streams.domain;
 
 public class Person {
-    private String name;
-    private int age;
-    private Gender gender;
+    private final String name;
+    private final int age;
+    private final Gender gender;
 
     public Person(String name, int age, Gender gender) {
         this.name = name;
@@ -15,23 +15,11 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public Gender getGender() {
         return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
     }
 }
