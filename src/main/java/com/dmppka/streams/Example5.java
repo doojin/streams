@@ -3,6 +3,8 @@ package com.dmppka.streams;
 import com.dmppka.streams.domain.Gender;
 import com.dmppka.streams.domain.Person;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +24,24 @@ public class Example5 {
         Map<Gender, List<Person>> grouped = people.stream()
                 .collect(groupingBy(Person::getGender));
 
-        grouped.entrySet().stream()
+        printResult(grouped);
+
+        // Doing the same without streams
+        grouped = new HashMap<>();
+
+        for (Person person: people) {
+            Gender gender = person.getGender();
+            if (!grouped.containsKey(gender)) {
+                grouped.put(gender, new ArrayList<>());
+            }
+            grouped.get(gender).add(person);
+        }
+
+        printResult(grouped);
+    }
+
+    public static void printResult(Map<Gender, List<Person>> result) {
+        result.entrySet().stream()
                 .forEach(entry -> {
                     Gender gender = entry.getKey();
                     List<Person> listOfPeople = entry.getValue();
