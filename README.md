@@ -6,7 +6,8 @@ Example3: Reduce example <br/>
 Example4: Numeric streams <br/>
 Example5: Grouping <br/>
 Example6: Tasks from Java 8 in Action <br/>
-Example7: Performance stream vs parallel stream
+Example7: Performance stream vs parallel stream <br/>
+Example8: flatmap
 
 # Sources
 http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html <br/>
